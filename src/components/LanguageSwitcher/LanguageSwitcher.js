@@ -1,77 +1,59 @@
 import React from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      width: '100%',
-      maxWidth: 360,
-      backgroundColor: theme.palette.background.paper,
+      display: 'flex',
+      flexWrap: 'wrap',
+      color: '#ffffff'
     },
+    formControl: {
+      margin: theme.spacing(1),
+      minWidth: 120,
+      color: '#ffffff'
+    },
+    // formLabel: {
+    //     color: '#ffffff'
+    // }
   }),
 );
 
-const options = [
-  'Show some love to Material-UI',
-  'Show all notification content',
-  'Hide sensitive notification content',
-  'Hide all notification content',
-];
-
-export default function LanguageSwitcher() {
+export default function SimpleSelect(props) {
   const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [selectedIndex, setSelectedIndex] = React.useState(1);
+  const [values, setValues] = React.useState({
+    language: ''
+  });
 
-  function handleClickListItem(event) {
-    setAnchorEl(event.currentTarget);
-  }
+  function handleChange(event) {
+    setValues(oldValues => ({
+        ...oldValues,
+        [event.target.name]: event.target.value,
+    }));
 
-  function handleMenuItemClick(event, index) {
-    setSelectedIndex(index);
-    setAnchorEl(null);
-  }
-
-  function handleClose() {
-    setAnchorEl(null);
+    props.getLanguage(event.target.value);
   }
 
   return (
-    <div className={classes.root}>
-      <List component="nav" aria-label="Device settings">
-        <ListItem
-          button
-          aria-haspopup="true"
-          aria-controls="lock-menu"
-          aria-label="when device is locked"
-          onClick={handleClickListItem}
+    <form className={classes.root} autoComplete="off">
+      <FormControl className={classes.formControl}>
+        <InputLabel htmlFor="language">Language</InputLabel>
+        <Select
+          value={values.language}
+          onChange={handleChange}
+          inputProps={{
+            name: 'language',
+            id: 'language',
+          }}
         >
-          <ListItemText primary="When device is locked" secondary={options[selectedIndex]} />
-        </ListItem>
-      </List>
-      <Menu
-        id="lock-menu"
-        anchorEl={anchorEl}
-        keepMounted
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
-      >
-        {options.map((option, index) => (
-          <MenuItem
-            key={option}
-            disabled={index === 0}
-            selected={index === selectedIndex}
-            onClick={event => handleMenuItemClick(event, index)}
-          >
-            {option}
-          </MenuItem>
-        ))}
-      </Menu>
-    </div>
+          <MenuItem value={'en_US'}>English</MenuItem>
+          <MenuItem value={'la_PG'}>Pig Latin</MenuItem>
+        </Select>
+      </FormControl>
+    </form>
   );
 }
