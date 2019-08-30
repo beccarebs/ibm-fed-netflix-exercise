@@ -4,6 +4,7 @@ import PigLatinContent from './data/la_PG.json';
 import Navigation from './components/Navigation/Navigation';
 import Intro from './components/Intro/Intro';
 import Gallery from './components/Gallery/Gallery';
+import EpisodeList from './components/EpisodeList/EpisodeList';
 import './App.scss';
 
 class App extends Component {
@@ -35,6 +36,7 @@ class App extends Component {
         <Navigation content={this.state.content} getLanguage={this.getLanguage.bind(this)} />
         <Intro content={this.state.content} />
         <Gallery content={this.state.content} />
+        <EpisodeList content={this.state.content} />
       </div>
     );
   }

@@ -50,7 +50,7 @@ class Navigation extends Component {
   render(){
     return (
       <div style={styles.root}>
-        <AppBar position="static" color="inherit" >
+        <AppBar position="fixed" color="inherit" >
           <Toolbar>
             <IconButton onClick={()=> this.handleDrawerOpen()} edge="start" style={styles.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
