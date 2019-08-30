@@ -1,3 +1,8 @@
+## References
+For the coding exercise I used the following codepen's:
+[https://codepen.io/tobyj/pen/QjvEex](https://codepen.io/tobyj/pen/QjvEex)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

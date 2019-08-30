@@ -3,6 +3,8 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Image from "../../assets/images/st3-all-up-logo-3200x1800.png";
+import Typography from '@material-ui/core/Typography';
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -12,6 +14,7 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       backgroundPosition: 'center center'
+      
     },
     paper: {
       padding: theme.spacing(2),
@@ -28,9 +31,13 @@ export default function Intro(props) {
     <div id="intro" className={classes.root}>
     <Container maxWidth="xl">
       <Grid container spacing={3}>
-        <Grid item xs={6} color="contrastText">
+        <Grid item sm={3}></Grid>
+        <Grid item sm={6}>
+          <Typography variant="body2" color="textSecondary" component="p">
             {props.content.description}
+          </Typography>
         </Grid>
+        <Grid item sm={3}></Grid>
       </Grid>
       </Container>
     </div>
