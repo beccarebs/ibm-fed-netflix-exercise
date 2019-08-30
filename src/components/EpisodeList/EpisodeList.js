@@ -24,7 +24,8 @@ const useStyles = makeStyles((theme: Theme) =>
         backgroundRepeat: 'repeat-x',
         backgroundPosition: 'center 130%',
         backgroundSize:'24%',
-        paddingBottom:'80px'
+        paddingBottom:'80px',
+        paddingTop: '60px'
     },
     avatar: {
         backgroundColor: '#ffffff',
