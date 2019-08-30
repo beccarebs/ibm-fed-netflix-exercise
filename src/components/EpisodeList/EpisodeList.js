@@ -17,6 +17,10 @@ const useStyles = makeStyles((theme: Theme) =>
       maxWidth: 360,
       backgroundColor: theme.palette.background.paper,
     },
+    avatar: {
+        backgroundColor: '#ffffff',
+        color: theme.palette.primary.main
+    }
   }),
 );
 
@@ -51,11 +55,11 @@ export default function EpisodeList(props) {
                     {seasonOneEpisodes.map((episode) =>
                         <ListItem key={episode.name}>
                             <ListItemAvatar>
-                                <Avatar>
+                                <Avatar className={classes.avatar}>
                                     <StarIcon />
                                 </Avatar>
                             </ListItemAvatar>
-                            <ListItemText primary={episode.name} secondary={episode.rating} />
+                            <ListItemText primary={episode.name} secondary={`Rating: ${episode.rating}`} />
                         </ListItem>
                     )} 
                     </List>
@@ -68,11 +72,11 @@ export default function EpisodeList(props) {
                     {seasonTwoEpisodes.map((episode) =>
                         <ListItem key={episode.name}>
                             <ListItemAvatar>
-                                <Avatar>
+                                <Avatar className={classes.avatar}>
                                     <StarIcon />
                                 </Avatar>
                             </ListItemAvatar>
-                            <ListItemText primary={episode.name} secondary={episode.rating} />
+                            <ListItemText primary={episode.name} secondary={`Rating: ${episode.rating}`} />
                         </ListItem>
                     )} 
                     </List>

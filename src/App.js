@@ -6,6 +6,7 @@ import Intro from './components/Intro/Intro';
 import Gallery from './components/Gallery/Gallery';
 import EpisodeList from './components/EpisodeList/EpisodeList';
 import './App.scss';
+import Inspiration from './components/Inspiration/Inspiration.js';
 
 class App extends Component {
   constructor(props) {
@@ -35,6 +36,7 @@ class App extends Component {
       <div className="App">
         <Navigation content={this.state.content} getLanguage={this.getLanguage.bind(this)} />
         <Intro content={this.state.content} />
+        <Inspiration content={this.state.content} />
         <Gallery content={this.state.content} />
         <EpisodeList content={this.state.content} />
       </div>

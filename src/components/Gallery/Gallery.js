@@ -96,7 +96,6 @@ export default function Gallery(props) {
                       <Link href={item.reference} target="_blank">Reference</Link>
                     </Typography>
                   }
-                  
                 </CardContent>
               </CardActionArea>
             </Card>

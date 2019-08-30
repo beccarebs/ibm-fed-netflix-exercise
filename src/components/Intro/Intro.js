@@ -9,18 +9,20 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
-      height:'90vh',
+      height:'95vh',
       backgroundImage:`url(${Image})`,
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       backgroundPosition: 'center center'
-      
     },
     paper: {
       padding: theme.spacing(2),
       textAlign: 'center',
       color: theme.palette.text.secondary,
     },
+    first: {
+      paddingTop: '60px'
+    }
   }),
 );
 
@@ -33,7 +35,7 @@ export default function Intro(props) {
       <Grid container spacing={3}>
         <Grid item sm={3}></Grid>
         <Grid item sm={6}>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography className={classes.first} variant="h5" color="textSecondary" component="p">
             {props.content.description}
           </Typography>
         </Grid>
