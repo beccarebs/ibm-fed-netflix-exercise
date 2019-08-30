@@ -27,7 +27,7 @@ export default function Inspiration(props) {
 
   return (
     <div id="inspiration" className={classes.root}>
-        <Container maxWidth="xl">
+        <Container maxWidth="lg">
             <Grid container spacing={3}>
                 <Grid item md={4} align="center">
                     <img className={classes.paragraphs} src={require('../../assets/images/stanger-things_raw.png')} alt="Stranger Things logo" />

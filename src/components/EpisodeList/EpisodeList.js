@@ -9,6 +9,8 @@ import StarIcon from '@material-ui/icons/Star';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import Image from "../../assets/images/eggo.png";
+
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -16,6 +18,13 @@ const useStyles = makeStyles((theme: Theme) =>
       width: '100%',
       maxWidth: 360,
       backgroundColor: theme.palette.background.paper,
+    },
+    root2: {
+        backgroundImage:`url(${Image})`,
+        backgroundRepeat: 'repeat-x',
+        backgroundPosition: 'center 130%',
+        backgroundSize:'24%',
+        paddingBottom:'80px'
     },
     avatar: {
         backgroundColor: '#ffffff',
@@ -41,13 +50,13 @@ export default function EpisodeList(props) {
     });
     
   return (
-    <div id="episodes">
+    <div id="episodes" className={classes.root2}>
         <Typography gutterBottom align="center" variant="h2" component="h2">
             Episode List
         </Typography>
-        <Container maxWidth="xl">
+        <Container maxWidth="lg">
             <Grid container spacing={3}>
-                <Grid item md={6}>
+                <Grid item md={6} align="center">
                     <Typography className={classes.heading} gutterBottom align="center" variant="h6" component="h6">
                         Season 1 Episodes by Rating
                     </Typography>
@@ -64,7 +73,7 @@ export default function EpisodeList(props) {
                     )} 
                     </List>
                 </Grid>
-                <Grid item md={6}>
+                <Grid item md={6} align="center">
                     <Typography className={classes.heading} gutterBottom align="center" variant="h6" component="h6">
                         Season 2 Episodes by Rating
                     </Typography>

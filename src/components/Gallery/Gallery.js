@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     maxWidth: 345,
   },
   gallerySpacing: {
-    padding: '0 0 40px 0'
+    padding: '60px 0 40px 0'
   },
   heading: {
     marginTop: '40px'
@@ -74,7 +74,7 @@ export default function Gallery(props) {
     <Typography className={classes.heading} gutterBottom align="center" variant="h2" component="h2">
       Gallery
     </Typography>
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <Grid container spacing={3}>
         {props.content.gallery.map((item) =>
           <Grid item key={item.text} md={3}>
